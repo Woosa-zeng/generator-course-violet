@@ -3,19 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>fisvue</title>
-    <script src="js/common/vue.min.js"></script>
+    <script src="js/demo1/vue.min.js"></script>
   </head>
   <body>
 
     <div id="app">
-        <span>This will never change: {{ msg }}</span>
+        <div class="static" v-bind:class="[classA, { classB: isB, classC: isC }]">>123</div>
     </div>
 
     <script>
-        var app = new Vue({
+        new Vue({
             el: '#app',
             data: {
-                msg: 'abc'
+                classA: 'red',
+                isB: true,
+                isC: true
+
             }
         });
     </script>
